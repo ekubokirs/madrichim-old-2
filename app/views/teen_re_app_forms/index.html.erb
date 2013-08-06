@@ -1,0 +1,25 @@
+<h1>Listing teen_re_app_forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teen_re_app_forms.each do |teen_re_app_form| %>
+      <tr>
+        <td><%= link_to 'Show', teen_re_app_form %></td>
+        <td><%= link_to 'Edit', edit_teen_re_app_form_path(teen_re_app_form) %></td>
+        <td><%= link_to 'Destroy', teen_re_app_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Teen re app form', new_teen_re_app_form_path %>

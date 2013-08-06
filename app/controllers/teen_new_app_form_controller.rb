@@ -1,0 +1,2 @@
+class TeenNewAppFormController < ApplicationController
+end
