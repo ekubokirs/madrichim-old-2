@@ -8,7 +8,7 @@ Madrichim::Application.routes.draw do
 
   resources :teacher_mid_year_forms
 
-  resources :student_mid_year_forms
+  resources :teen_mid_year_forms
 
   resources :teacher_end_year_forms
 
@@ -16,7 +16,7 @@ Madrichim::Application.routes.draw do
 
   resources :teen_new_app_forms
 
-  resources :registrants
+  resources :users
 
 	get "privacy" => "site#privacy"
   get "terms" => "site#terms"

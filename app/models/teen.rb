@@ -4,6 +4,11 @@ class Teen
   key :first_name,	String
   key :last_name,		String
   key :born_on,			Date
+  key :zipcode,
+  key :school,			String
+  key :homephone, 	String
+  key :cellphone,		String
+  
 
   many	:teen_mid_year_forms
   many	:teen_end_year_forms

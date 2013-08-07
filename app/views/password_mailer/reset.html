@@ -1,0 +1,16 @@
+<p> 
+	To reset your password, please follow the link below:
+</p>
+<p>
+	<%= link_to registration_url(@registrant.code), registration_url(@registrant.code) %>
+</p>
+<p>
+	This link will expire at <%= @registrant.expires_at %>.
+</p>
+<p>
+	If you received this message in error, simply do nothing.
+</p>
+<p>
+	Thanks!
+	-Emilia
+</p>

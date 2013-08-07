@@ -1,5 +1,9 @@
 class TeenMidYearFormsController < ApplicationController
 
+	def index
+		
+	end
+
 	def new
 	end
 
