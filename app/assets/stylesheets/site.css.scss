@@ -1,15 +1,19 @@
 .ma_back{
 	border: solid 2px #00d0ff;
+	margin:10px;
 }
 
 .ma_head{
-	font-family: 'Goblin One', cursive;
 	border: solid 3px #ff5100;
 	margin: 10px;
 	text-align: center;
-	font-size: 40px;
-	color: #001cff;
 	background-color: #fff;
+	padding: 10px;
+}
+.ma_title{
+	font-family: 'Goblin One', cursive;
+	font-size: 60px;
+	color: #001cff;
 }
 .heb{
 	direction:rtl;

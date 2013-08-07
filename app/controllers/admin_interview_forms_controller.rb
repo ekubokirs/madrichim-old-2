@@ -1,0 +1,2 @@
+class AdminInterviewFormsController < ApplicationController
+end

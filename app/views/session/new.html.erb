@@ -1,22 +1,37 @@
 <div class="ma_back">	
 	<div class="row">
-		<div class="large-6 large-offset-3 columns ma_head">
-			<h1>CTJ Madrichim</h1>
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ Madrichim</h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="large-12 colums">
-			<div class="large-6 columns">
-				placeholder
-			</div>
-			<div class="large-6 columns">
-				<div class="row">
-					<h2>Welcome!</h2>
+		<div class="large-5 columns ma_login">
+			<%= form_tag login_path do %>
+				<div class="ma_signin hide-text">
+					To sign up, please enter your email and a new user email will be sent to you.
 				</div>
-				<p class="row">
-					This site is for CTJ madrichim and teachers to  more submit all necessary forms for the Madrichim Coordinator.  This site was designed and developed by Emilia Kubo Kirschenbaum.
-				</p>
+				<div class="ma_reset">
+					To reset your password, please enter your email and leave the password field blank.  A reset email will be sent to you.
+				</div>
+				<%= label_tag :email, "E-mail", :class => "ma_label" %>
+				<%= text_field_tag :email %>
+				<%= label_tag :password, "Password", :id => "passwordLabel", :class => "ma_label" %>
+				<%= password_field_tag :password, nil, :id => "inputPassword" %>
+				<%= button_tag "Show Password", :id => "toggle-password-field", :class => "alert"%>
+				<%= submit_tag "Sign In", :class => "button" %>
+				<%= button_tag "Register", :id => "newReg" %>
+			<% end %>
+		</div>
+		<div class="large-5 columns ma_welcome">
+			<div class="row">
+				<h2>Welcome!</h2>
+			</div>
+			<div class="row ma_weltext">
+				This site is for Congregation Tikvat Jacob Beth Torah madrichim and teachers to  more submit all necessary forms for the Madrichim Coordinator.
 			</div>
 		</div>
+	</div>
+	<div class="row ma_design">
+		This site was designed and developed by Emilia Kubo Kirschenbaum.
 	</div>
 </div>

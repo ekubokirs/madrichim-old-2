@@ -1,0 +1,2 @@
+class TeenTerminationFormController < ApplicationController
+end
