@@ -1,0 +1,56 @@
+<div class="ma_back"> 
+  <div class="row">
+    <div class="large-6 large-offset-3 columns ma_head">
+      <h1>CTJ Madrichim</h1>
+    </div>
+  </div>
+  <%= form_for :teen, url: {action: "create"} do |f| %>
+    <div class="row">
+      <p class="large-6 columns">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </p>
+      <p class="large-6 columns">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </p>
+    </div>
+    <div class="row">
+      <p class="large-6 columns">
+        <%= f.label :grade %>
+        <%= f.text_field :grade %>
+      </p>
+       <p class="large-6 columns">
+        <%= f.label :school %>
+        <%= f.text_field :school %>
+      </p>
+    </div>
+    <div class="row">
+       <p class="large-6 columns">
+        <%= f.label :home_phone %>
+        <%= f.telephone_field :home_phone %>
+      </p>
+       <p class="large-6 columns">
+        <%= f.label :cell_phone %>
+        <%= f.telephone_field :cell_phone %>
+      </p>
+      <p class="large-6 columns">
+        <%= f.label :birthday %>
+        <%= f.date_field :born_on %>
+      </p>
+      <p class="large-6 columns">
+        <%= f.label :size, "T-Shirt Size" %>
+        <%= f.select :size, options_for_select([
+          ["Youth Large",               "YL"],
+          ["Adult Small",               "AS"],
+          ["Adult Medium",              "AM"],
+          ["Adult Large",               "AL"],
+          ["Adult Extra Large",         "AXL"],
+          ["Adult Extra Extra Large",   "AXXL"]]) %>
+      </p>
+    </div>
+    <div class="row">
+      <%= f.submit "Submit Form", :class => "small button" %>
+    </div>
+  <% end %>
+</div>

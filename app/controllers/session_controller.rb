@@ -12,13 +12,14 @@ class SessionController < ApplicationController
       #execute this if the password is blank
       if params[:password].blank?
         #find the user by these parameters
-        user = User.where(:email => params[:email])
+        user = User.find(:email => params[:email])
+        puts user.inspect
 
         if user
           #generate random code
-          user.secret_code = SecureRandom.urlsafe_base64
-          #the code expires at a certain time from time sent
+          user.code = SecureRandom.urlsafe_base64
           user.expires_at = Time.now + 48. hours
+          #the code expires at a certain time from time sent
           user.save
 
           #calls mailer/password_mailer.rb to send reset email
@@ -27,12 +28,12 @@ class SessionController < ApplicationController
         else 
           #defines the variable user as something new
           user = User.new
-          user.secret_code = SecureRandom.urlsafe_base64
+          user.code = SecureRandom.urlsafe_base64
           user.expires_at = Time.now + 48. hours
           #defines what the user email is for the mailer
           user.email = params[:email]
           user.save
-
+          
           PasswordMailer.registration_email(user).deliver
         end
         
@@ -55,9 +56,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
+  	session[:user_id] = nil
+  	redirect_to login_url
   end
-
-
-	private
-
 end

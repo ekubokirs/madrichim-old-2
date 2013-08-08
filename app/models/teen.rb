@@ -8,6 +8,7 @@ class Teen
   key :school,			String
   key :homephone, 	String
   key :cellphone,		String
+  key :size,        String
   
 
   many	:teen_mid_year_forms

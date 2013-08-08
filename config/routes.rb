@@ -14,9 +14,17 @@ Madrichim::Application.routes.draw do
 
   resources :teen_re_app_forms
 
-  resources :teen_new_app_forms
+  # resources :teen_new_app_forms
+
+  #resource :teen_new_app_form
+  get "teen_new_app_form/new" => "teen_new_app_form#new"
+  post "teen_new_app_form/new" => "teen_new_app_form#create"
+
+
 
   resources :users
+
+  get "users/:code" => "users#new", as: :registration 
 
 	get "privacy" => "site#privacy"
   get "terms" => "site#terms"

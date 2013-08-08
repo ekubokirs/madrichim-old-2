@@ -1,0 +1,31 @@
+<%= form_for :teen, url: {action: "create"} do |f| %>
+  <div class="row">
+    <p class="large-6 columns">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </p>
+    <p class="large-6 columns">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </p>
+    <p class="large-6 columns">
+      <%= f.label :placement, "Class Taught" %>
+      <%= f.select :placement, options_for_select([
+        ["Kindergarten",  "K"],
+        ["First Grade",   "1"],
+        ["Second Grade",  "2"],
+        ["Third Grade",   "3"],
+        ["Fourth Grade",  "4"],
+        ["Fifth Grade",   "5"],
+        ["Cooking",       "Cook"],
+        ["Sports",        "Sport"],
+        ["Art",           "Art"],
+        ["Drama",         "Drama"],
+        ["Music",         "Music"],
+        ["Other",         "Other"]]) %>
+    </p>
+  </div>
+  <div class="row">
+    <%= f.submit "Submit Form", :class => "small button" %>
+  </div>
+<% end %>

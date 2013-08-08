@@ -1,41 +1,8 @@
-<%= form_for @teen_new_app_form, html: { autocomplete: :off } do |f| %>
+<%= form_for :teen_new_app_form, url: {action: "create"} do |f| %>
   <div class="row">
-    <p class="large-6 columns">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </p>
-    <p class="large-6 columns">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </p>
+    
   </div>
   <div class="row">
-    <p class="large-6 columns">
-      <%= f.label :grade %>
-      <%= f.text_field :grade %>
-    </p>
-     <p class="large-6 columns">
-      <%= f.label :school %>
-      <%= f.text_field :school %>
-    </p>
+    <%= f.submit "Submit Application", :class => "small button" %>
   </div>
-  <div class="row">
-     <p class="large-6 columns">
-      <%= f.label :home_phone %>
-      <%= f.telephone_field :home_phone %>
-    </p>
-     <p class="large-6 columns">
-      <%= f.label :cell_phone %>
-      <%= f.telephone_field :cell_phone %>
-    </p>
-  </div>
-  <div class="row">
-    <p>
-      <%= f.label :birthday %>
-      <%= f.date_field :born_on %>
-    </p>
-  </div>
-  <p>
-    <%= f.submit :class => "small button" %>
-  </p>
 <% end %>

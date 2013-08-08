@@ -1,6 +1,7 @@
 class TeenNewAppFormController < ApplicationController
 
 	def new
+		
 	end
 
 	def edit
