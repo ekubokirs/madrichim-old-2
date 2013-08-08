@@ -1,4 +1,4 @@
-<%= form_for @registrant do |f| %>
+<%= form_for :user do |f| %>
 	<div class="row">
 		<p>
 			<%= f.label :password %>
@@ -13,7 +13,7 @@
 	<div class="row">
 		<p>
 			<%= f.label :user_type %>
-			<%= f.select :user_type, options_for_select(["Madrich/a", "Teacher"]) %>
+			<%= f.select :user_type, options_for_select([["Madrich/a", "Teen"], ["Teacher", "Teacher"]]) %>
 		</p>
 	</div>
 	<div class="row">

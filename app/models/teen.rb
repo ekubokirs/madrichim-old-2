@@ -1,14 +1,17 @@
-class Teen
+class Teen < User
   include MongoMapper::Document
   
-  key :first_name,	String
-  key :last_name,		String
   key :born_on,			Date
-  key :zipcode,
+  key :zipcode,     Integer
   key :school,			String
   key :homephone, 	String
   key :cellphone,		String
   key :size,        String
+
+  def create(data)
+    data[:user_type] = "teen"
+    super data
+  end
   
 
   many	:teen_mid_year_forms

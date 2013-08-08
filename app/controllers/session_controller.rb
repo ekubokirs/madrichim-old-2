@@ -12,7 +12,7 @@ class SessionController < ApplicationController
       #execute this if the password is blank
       if params[:password].blank?
         #find the user by these parameters
-        user = User.find(:email => params[:email])
+        user = User.all(:email => params[:email]).first
         puts user.inspect
 
         if user
@@ -24,6 +24,7 @@ class SessionController < ApplicationController
 
           #calls mailer/password_mailer.rb to send reset email
           PasswordMailer.reset_email(user).deliver
+          flash[:alert] = "Reset E-mail Sent!"
 
         else 
           #defines the variable user as something new
@@ -35,6 +36,7 @@ class SessionController < ApplicationController
           user.save
           
           PasswordMailer.registration_email(user).deliver
+          flash[:alert] = "Registration E-mail Sent!"
         end
         
       render :new
@@ -48,7 +50,7 @@ class SessionController < ApplicationController
         puts params[:password]
         if user
           session[:user_id] = user.id
-          redirect_to root_url :code, flash[:alert] = "You've Logged In!" and return
+          redirect_to root_url :code, flash[:notice] = "You've Logged In!" and return
         end
         render :new
       end
