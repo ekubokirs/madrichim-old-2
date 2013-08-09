@@ -14,6 +14,10 @@ Madrichim::Application.routes.draw do
 
   resources :teen_re_app_forms
 
+  resources :incidents
+
+  resources :registration
+
   # resources :teen_new_app_forms
 
   #resource :teen_new_app_form
@@ -22,7 +26,7 @@ Madrichim::Application.routes.draw do
 
 
   #resources :users
-  get "users/:code" => "users#new", as: :registration 
+  get "users/:code" => "users#new"
   post "users/:code" => "users#create"
 
 

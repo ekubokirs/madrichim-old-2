@@ -1,7 +1,7 @@
 <div class="ma_back">	
 	<div class="row">
 		<div class="ma_head">
-			<h1 class="ma_title">CTJ Madrichim</h1>
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
 		</div>
 	</div>
 	<div class="row ma_flashalert">
@@ -20,9 +20,15 @@
 				<%= text_field_tag :email %>
 				<%= label_tag :password, "Password", :id => "passwordLabel", :class => "ma_label" %>
 				<%= password_field_tag :password, nil, :id => "inputPassword" %>
-				<%= button_tag "Show Password", :id => "toggle-password-field", :class => "small button alert"%>
-				<%= submit_tag "Sign In", :class => "button" %>
-				<%= button_tag "Register", :id => "newReg" %>
+				<%= button_tag "Show Password", :id => "toggle-password-field",:id => "showPassword", :class => "small button alert"%>
+				<div class="row">
+					<div class="large-6 columns">
+						<%= submit_tag "Submit", :class => "button" %>
+					</div>
+					<div class="large-6 columns">
+						<%= button_tag "Register", :id => "newReg" %>
+					</div>
+				</div>
 			<% end %>
 		</div>
 		<div class="large-5 columns ma_welcome">

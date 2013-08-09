@@ -3,9 +3,8 @@ class Teen < User
   
   key :born_on,			Date
   key :zipcode,     Integer
-  key :school,			String
-  key :homephone, 	String
-  key :cellphone,		String
+  key :home_phone, 	String
+  key :cell_phone,		String
   key :size,        String
 
   def create(data)

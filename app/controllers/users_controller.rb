@@ -12,16 +12,21 @@ class UsersController < ApplicationController
 
   def create
   	data = user_params
+    @registrant = User.find_by_code params[:code]
+
   	if data[:user_type] == "Teen"
-  		@user = Teen.create data
+  		@user = Teen.new data
   	else 
-    	@user = Teacher.create data
+    	@user = Teacher.new data
     end
 
-    if @user
-      redirect_to root_url, status: 303
+    @user.email = @registrant.email
+
+    if @user.save
+      @registrant.destroy
+      redirect_to root_url
     else
-      render :new
+      render :new, error: @user.errors
     end
   end
 
@@ -35,7 +40,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :user_type)
+    params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :user_type)
   end
 
 

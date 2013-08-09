@@ -1,12 +1,25 @@
+User
+
+
 <%= form_for :user do |f| %>
 	<div class="row">
-		<p>
+		<p class="large-6 columns">
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name %>
+		</p>
+		<p class="large-6 columns">
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name %>
+		</p>
+	</div>
+	<div class="row">
+		<p class="large-6 columns">
 			<%= f.label :password %>
 			<%= f.password_field :password %>
 			<%= f.label :password_confirmation %>
 			<%= f.password_field :password_confirmation %>
 		</p>
-		<p>
+		<p class="large-6 columns">
 			<!-- password strength meter -->
 		</p>
 	</div>

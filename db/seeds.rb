@@ -5,5 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Admin.destroy_all
 
-Admin.create([{email:'emilia@ctjmb.org', password: 'abc', password_confirmation: 'abc', user_type: 'admin'},{email:'assistant@ctjmb.org', password: 'abc', password_confirmation: 'abc', user_type: 'admin'},{email:'rabbi.carrie@ctjmb.org', password: 'abc', password_confirmation: 'abc', user_type: 'admin'}])
+Admin.create([
+	{email:'emilia@ctjmb.org', password: 'abc', password_confirmation: 'abc'},
+	{email:'assistant@ctjmb.org', password: 'abc', password_confirmation: 'abc'},
+	{email:'rabbi.carrie@ctjmb.org', password: 'abc', password_confirmation: 'abc'}
+])

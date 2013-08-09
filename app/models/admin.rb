@@ -5,6 +5,6 @@ class Admin < User
 		super data
 	end
 
-	many admin_interview_forms
+	# many admin_interview_forms
 
 end

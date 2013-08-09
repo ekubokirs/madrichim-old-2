@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'mongo_mapper', github: 'jnunemaker/mongomapper'
 gem 'bson_ext'
 
-gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
+gem 'compass-rails'
 gem 'zurb-foundation'
 
 group :doc do
@@ -42,7 +42,7 @@ group :development, :test do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0', require: "bcrypt"
 
 # Use unicorn as the app server
 # gem 'unicorn'

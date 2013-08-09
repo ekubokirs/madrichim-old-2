@@ -1,17 +1,8 @@
 <div class="ma_back">	
 	<div class="row">
-		<div class="large-6 large-offset-3 columns ma_head">
-			<h1>CTJ Madrichim</h1>
+		<div class="ma_head">
+			<h1 class="ma_title">CTJ<br>Madrichim</h1>
 		</div>
 	</div>
-	<div class="row ma_flashalert">
-		<%= flash.notice %>
-	</div>
-	<div class="row">
-		<div class="large-4 large-offset-4 columns heb ma_greet">
-		שלום!
-		</div>
-	</div>
-	<div class="row">
-	</div>
+  <%= render partial: @dashboard %>
 </div>

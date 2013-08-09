@@ -1,5 +1,7 @@
 class TeenNewAppForm
   include MongoMapper::Document
 
-   belongs_to	:teen
+  timestamps!
+   
+  belongs_to	:teen
 end
